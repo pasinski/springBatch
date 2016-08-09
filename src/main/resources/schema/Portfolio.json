@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Portfolio",
+  "description": "Portfolio being produced",
+  "type": "object",
+  "properties": {
+    "fakeId" : {"type" : "number"},
+    "portfolioNumber": {
+      "description": "The unique identifier for a portfolio",
+      "type": "string"
+
+    },
+    "name": {
+      "description": "Name of the portfolio",
+      "type": "string"
+    },
+    "transactions" :{
+      "type" : "array",
+      "items" : {
+        "type": "object",
+        "properties" : {
+          "credit" : {
+            "type" : "number"
+          },
+          "debit" : {
+            "type" : "number"
+          },
+          "maturityDate" : {
+            "type" : "string",
+            "format" : "date-time"
+          },
+          "description" : {
+            "type" : "string"
+          }
+        }
+      }
+    }
+  },
+  "required": ["fakeId", "portfolioNumber", "transactions"]
+}
